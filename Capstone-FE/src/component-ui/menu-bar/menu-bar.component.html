@@ -1,0 +1,18 @@
+<div>
+  <div class="title-section">
+    <h1>
+      <mat-toolbar>
+        <span>{{title}}</span>
+      </mat-toolbar>
+    </h1>
+    <button class="login-Btn" (click)="(authService.isLoggedIn) ? logout() : login()"mat-stroked-button>{{authService.isLoggedIn ? "Logout" : "Login"}}</button>
+  </div>
+  <mat-tab-group [dynamicHeight]="true" #routerValue (selectedIndexChange)="routeNavigate(routerValue)">
+    <ng-container *ngFor="let item of menuDataList">
+      <mat-tab label="{{item}}" [disabled]="!authService.isLoggedIn"></mat-tab>
+    </ng-container>
+  </mat-tab-group>
+  <!-- <ng-container *ngFor="let item of menuDataList">
+      <button mat-button class="btn-space"><li #routerValue (click)="routeNavigate(routerValue.innerText)">{{item}}</li></button>
+  </ng-container> -->
+</div>

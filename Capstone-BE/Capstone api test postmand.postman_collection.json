@@ -1,0 +1,970 @@
+{
+	"info": {
+		"_postman_id": "2f938086-cc92-4598-a13f-9d08db49f3b7",
+		"name": "Capstone api test postmand",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14864631"
+	},
+	"item": [
+		{
+			"name": "CastingAssitance",
+			"item": [
+				{
+					"name": "Create Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc0ZTVkZTgwZDg5Zjc3Nzc1MjViIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk0MDM4LCJleHAiOjE2NjI4MDEyMzgsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.T8Jfy1x9V6reDouODHF1yCbZSFmDUjY3jh6K6ytsPvjytgtUsZKo-AS0k71DdCZoS9z1hrM90rOQ99cl59FoJ5TWhoSkKdzlt2GgK7WjxTSU2jq7i8bZwklk0r0iu88_9kB_hM-xcAA7zz5pBwmlDhabtsLSne1xFECuJCl66KvuMR4aebZmDZuhEHwe_z-t-5AHRlsFEFsuIyJzGyEIRqKuP0p5jAyg7Rxepa4yKKdXTg8zdMKh4Oylca2Y2VxHECnbDSulyh3dGUbPa340rKRxYyMdnFulRUe9_6ES4dyTWZ-nrr3gwD_mad0jI_Z1wXSukaEZL2h3oYTnjRMRjw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"releaseDate\": \"20220910\",\r\n    \"title\": \"test2\",\r\n    \"pariticipatedActors\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies?movieName=",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "movieName",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc0ZTVkZTgwZDg5Zjc3Nzc1MjViIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk0MDM4LCJleHAiOjE2NjI4MDEyMzgsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.T8Jfy1x9V6reDouODHF1yCbZSFmDUjY3jh6K6ytsPvjytgtUsZKo-AS0k71DdCZoS9z1hrM90rOQ99cl59FoJ5TWhoSkKdzlt2GgK7WjxTSU2jq7i8bZwklk0r0iu88_9kB_hM-xcAA7zz5pBwmlDhabtsLSne1xFECuJCl66KvuMR4aebZmDZuhEHwe_z-t-5AHRlsFEFsuIyJzGyEIRqKuP0p5jAyg7Rxepa4yKKdXTg8zdMKh4Oylca2Y2VxHECnbDSulyh3dGUbPa340rKRxYyMdnFulRUe9_6ES4dyTWZ-nrr3gwD_mad0jI_Z1wXSukaEZL2h3oYTnjRMRjw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"releaseDate\": \"20221010\",\r\n    \"title\": \"test1\",\r\n    \"pariticipatedActors\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"test actor name 2\",\r\n            \"age\": \"25\",\r\n            \"gender\": \"Male\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies-update-info?movie_id=100",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies-update-info"
+							],
+							"query": [
+								{
+									"key": "movie_id",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movies",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies-eviction?movie_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies-eviction"
+							],
+							"query": [
+								{
+									"key": "movie_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lilly\",\r\n    \"gender\": \"Female\",\r\n    \"age\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors-filter",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors-filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get casted Actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/casted-actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"casted-actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"test actor name 2\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update actor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"test actor name updated\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors-update-info?actor_id=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors-update-info"
+							],
+							"query": [
+								{
+									"key": "actor_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CastingDirector",
+			"item": [
+				{
+					"name": "Create Movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"releaseDate\": \"\",\r\n    \"title\": \"test1\",\r\n    \"pariticipatedActors\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"test actor name 1\",\r\n            \"age\": \"25\",\r\n            \"gender\": \"Male\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"test actor name 2\",\r\n            \"age\": \"25\",\r\n            \"gender\": \"Male\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies?movieName=",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "movieName",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc1YTAyZWM1MWMxZTlkYzU2NWM3IiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5MjcyLCJleHAiOjE2NjI4MDY0NzIsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.AfhaNTnJFf_6Ii0iJJltbRFbB231BunXFheZTpeBdipvh-k0ZmCjZYS7HvhHj3vVmSQNauAfQa9dxIub7LiokJEGQQ-50sA-KBl8SjKG3_ZFzcKUJgG7xEPMMZoYQVCe9PnDEdopezk2L0zwEypqSwtsghWR8B22b7EZZIwMgk81v_71W1jJ4D17AflxHJXzxHvAfFpj2DmOzyJnaUmbJOf-JcV_GDBoQz7MCvF25vr-Awx99HUiIhI0HbuIqKR7nJGIcFckTp6L2bxqRWj3rpK9HKX2-tx7JinRUb2SxhXsEL9an8wjtStrilngr2Qk-S3uYMkY6f8OLgdaYio8mQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"releaseDate\": \"20221010\",\r\n    \"title\": \"test1\",\r\n    \"pariticipatedActors\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"test actor name 2\",\r\n            \"age\": \"25\",\r\n            \"gender\": \"Male\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies-update-info?movie_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies-update-info"
+							],
+							"query": [
+								{
+									"key": "movie_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc1YTAyZWM1MWMxZTlkYzU2NWM3IiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5MjcyLCJleHAiOjE2NjI4MDY0NzIsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.AfhaNTnJFf_6Ii0iJJltbRFbB231BunXFheZTpeBdipvh-k0ZmCjZYS7HvhHj3vVmSQNauAfQa9dxIub7LiokJEGQQ-50sA-KBl8SjKG3_ZFzcKUJgG7xEPMMZoYQVCe9PnDEdopezk2L0zwEypqSwtsghWR8B22b7EZZIwMgk81v_71W1jJ4D17AflxHJXzxHvAfFpj2DmOzyJnaUmbJOf-JcV_GDBoQz7MCvF25vr-Awx99HUiIhI0HbuIqKR7nJGIcFckTp6L2bxqRWj3rpK9HKX2-tx7JinRUb2SxhXsEL9an8wjtStrilngr2Qk-S3uYMkY6f8OLgdaYio8mQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies-eviction?movie_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies-eviction"
+							],
+							"query": [
+								{
+									"key": "movie_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lilly\",\r\n    \"gender\": \"Female\",\r\n    \"age\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors-filter",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors-filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get casted Actors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc1YTAyZWM1MWMxZTlkYzU2NWM3IiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5MjcyLCJleHAiOjE2NjI4MDY0NzIsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.AfhaNTnJFf_6Ii0iJJltbRFbB231BunXFheZTpeBdipvh-k0ZmCjZYS7HvhHj3vVmSQNauAfQa9dxIub7LiokJEGQQ-50sA-KBl8SjKG3_ZFzcKUJgG7xEPMMZoYQVCe9PnDEdopezk2L0zwEypqSwtsghWR8B22b7EZZIwMgk81v_71W1jJ4D17AflxHJXzxHvAfFpj2DmOzyJnaUmbJOf-JcV_GDBoQz7MCvF25vr-Awx99HUiIhI0HbuIqKR7nJGIcFckTp6L2bxqRWj3rpK9HKX2-tx7JinRUb2SxhXsEL9an8wjtStrilngr2Qk-S3uYMkY6f8OLgdaYio8mQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/casted-actors?movieId=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casted-actors"
+							],
+							"query": [
+								{
+									"key": "movieId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc1YTAyZWM1MWMxZTlkYzU2NWM3IiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5MjcyLCJleHAiOjE2NjI4MDY0NzIsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.AfhaNTnJFf_6Ii0iJJltbRFbB231BunXFheZTpeBdipvh-k0ZmCjZYS7HvhHj3vVmSQNauAfQa9dxIub7LiokJEGQQ-50sA-KBl8SjKG3_ZFzcKUJgG7xEPMMZoYQVCe9PnDEdopezk2L0zwEypqSwtsghWR8B22b7EZZIwMgk81v_71W1jJ4D17AflxHJXzxHvAfFpj2DmOzyJnaUmbJOf-JcV_GDBoQz7MCvF25vr-Awx99HUiIhI0HbuIqKR7nJGIcFckTp6L2bxqRWj3rpK9HKX2-tx7JinRUb2SxhXsEL9an8wjtStrilngr2Qk-S3uYMkY6f8OLgdaYio8mQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"test actor name 1\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc1YTAyZWM1MWMxZTlkYzU2NWM3IiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5MjcyLCJleHAiOjE2NjI4MDY0NzIsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.AfhaNTnJFf_6Ii0iJJltbRFbB231BunXFheZTpeBdipvh-k0ZmCjZYS7HvhHj3vVmSQNauAfQa9dxIub7LiokJEGQQ-50sA-KBl8SjKG3_ZFzcKUJgG7xEPMMZoYQVCe9PnDEdopezk2L0zwEypqSwtsghWR8B22b7EZZIwMgk81v_71W1jJ4D17AflxHJXzxHvAfFpj2DmOzyJnaUmbJOf-JcV_GDBoQz7MCvF25vr-Awx99HUiIhI0HbuIqKR7nJGIcFckTp6L2bxqRWj3rpK9HKX2-tx7JinRUb2SxhXsEL9an8wjtStrilngr2Qk-S3uYMkY6f8OLgdaYio8mQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"test actor name updated\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors-update-info?actor_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors-update-info"
+							],
+							"query": [
+								{
+									"key": "actor_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc1YTAyZWM1MWMxZTlkYzU2NWM3IiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5MjcyLCJleHAiOjE2NjI4MDY0NzIsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.AfhaNTnJFf_6Ii0iJJltbRFbB231BunXFheZTpeBdipvh-k0ZmCjZYS7HvhHj3vVmSQNauAfQa9dxIub7LiokJEGQQ-50sA-KBl8SjKG3_ZFzcKUJgG7xEPMMZoYQVCe9PnDEdopezk2L0zwEypqSwtsghWR8B22b7EZZIwMgk81v_71W1jJ4D17AflxHJXzxHvAfFpj2DmOzyJnaUmbJOf-JcV_GDBoQz7MCvF25vr-Awx99HUiIhI0HbuIqKR7nJGIcFckTp6L2bxqRWj3rpK9HKX2-tx7JinRUb2SxhXsEL9an8wjtStrilngr2Qk-S3uYMkY6f8OLgdaYio8mQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors-eviction?actor_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors-eviction"
+							],
+							"query": [
+								{
+									"key": "actor_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ExecutiveProducer",
+			"item": [
+				{
+					"name": "Create Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzg2NjU2LCJleHAiOjE2NjI3OTM4NTYsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.Ex7EHuKgiclWACOQn7BuUHvzp1TB-R-TgnOrYFdC0wVAMhC9AvaLkZ3mfozNWcd3m3VSA2QJB_LMD5d34Zab47c2GvjkULYyF08c2LwQn_nxtdtTwcC4kLj1jYQWrGdKWeIawrVr5jXvjBS_UHoDnD060Sj9W-nd_-DKIVoBVE70HXXpWEi8KGamIKWUwzAmg8YfWwPtIf0esflSna9Qk4NN6ir7FkixxQN1kK5sMs-X47ZCSp3Z6yhxq3maHQ893ZLuD-s8q0F8fhpKBmg838wDi8zWa7KzUHptAAr8mP3_ecQlTrgzguTgMPrz0Fx9v2-Gr_56VvuvotvHW1pumA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"releaseDate\": \"20220910\",\r\n    \"title\": \"test2\",\r\n    \"pariticipatedActors\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies?movieName=",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "movieName",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"releaseDate\": \"20221010\",\r\n    \"title\": \"test1\",\r\n    \"pariticipatedActors\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"test actor name 2\",\r\n            \"age\": \"25\",\r\n            \"gender\": \"Male\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies-update-info?movie_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies-update-info"
+							],
+							"query": [
+								{
+									"key": "movie_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/movies-eviction?movie_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies-eviction"
+							],
+							"query": [
+								{
+									"key": "movie_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"Male\",\r\n    \"age\": \"25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors-filter",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors-filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get casted Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/casted-actors",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casted-actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"test actor name 1\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"test actor name updated\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors-update-info?actor_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors-update-info"
+							],
+							"query": [
+								{
+									"key": "actor_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVpcEJ2N0NFV3pDTGpvMmJxd0xGQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1hNWVlaDRjcS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMxMDc2YzBiZGVhODBmYzY1ZWE4OGEwIiwiYXVkIjoiQ2FwU3RvbmUtYXBwIiwiaWF0IjoxNjYyNzk5NTAxLCJleHAiOjE2NjI4MDY3MDEsImF6cCI6Im03bkRqa29qTmpDMHp1bUJBR1pHOXRrQkJMWHdPWDVGIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJjcmVhdGU6YWN0b3JzIiwiY3JlYXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.mERsvn_M0yYZAvH8bYNIevUsNUD3BEdHAtOg-EfNd2nVfqjgN2r2NE3gvuP4hDFPfDyyVjCoo6i9rAqD1i2IrqpNqiD4YcGh8P0j8Y1wTOz80Hc9E_0-he7LLktshkjIGvXcTDKSvs-eaRC3lsu8I7iHMttOsVVNf20Sm_OPNT5GPJz61cUqQDSZY8_m9n12RVtUupe6GmLl0eRc6Y0B4C5RhpYX4BWYQ9q5oA1CsKm1ZBdZQGQdXL-CFLVIb_OaYqGRPQr0-iRe25FllFG3_959cxumnE5bYhLgXM9NT9pwuTfPUqCeRdYbMlogUwTNSBWHivoVnrrzEFkSQic_Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://haunt-capstone-app.herokuapp.com/actors-eviction?actor_id=1",
+							"protocol": "https",
+							"host": [
+								"haunt-capstone-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors-eviction"
+							],
+							"query": [
+								{
+									"key": "actor_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

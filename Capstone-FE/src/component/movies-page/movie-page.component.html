@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Search films</span>
+    <input type="text" #movieName (blur)="searchMovieName(movieName)" class="form-control" placeholder="film's name" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div><button type="button" *ngIf="!isCreating && authService.can('create:movies')" class="btn btn-primary" (click)="transitToCreateScreen()">Create New Movie</button></div>
+</div>
+<router-outlet></router-outlet>

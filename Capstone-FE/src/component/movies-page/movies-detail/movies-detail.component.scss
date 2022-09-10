@@ -1,0 +1,74 @@
+.split-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(1fr);
+  column-gap: .5em;
+  .movie-img-detail {
+    height: 85vh;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left top;
+    }
+  }
+  .movie-detail-info {
+    padding: .5em;
+    .movie-public-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    .movie-private-info {
+      .produced-movie {
+        margin-block: .5em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+      .producing-movie {
+        .producing-movie-fund, .producing-movie-plan {
+          margin-block: .5em;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto;
+          row-gap: .5em;
+        }
+      }
+    }
+  }
+  form {
+    padding-inline: .5em;
+    .movie-public-edit {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      column-gap: .5em;
+      .input-outer {
+        input {
+          height: min-content;
+        }
+      }
+    }
+    div:nth-child(2) {
+      * {
+        width: 100%;
+      }
+    }
+    .producing-movie-fund-edit {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      column-gap: .5em;
+    }
+    .producing-movie-plan-edit {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      column-gap: .5em;
+    }
+    .add-actor {
+      grid-column: 1/4;
+    }
+  }
+}

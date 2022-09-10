@@ -1,0 +1,75 @@
+<div class="container-fluid " >
+  <div *ngIf="movieService.EditingMovie || mode === 'New'">
+    <input name="" id="" #new class="btn btn-success m-1" [disabled]="!authService.can('create:movies')" type="button" value="New" (click)="modeChangeEvent(new)">
+    <input name="" id="" [disabled]="mode !== 'Edit' || !authService.can('update:movies')" #edit class="btn btn-primary m-1" type="button" value="Edit"
+      (click)="modeChangeEvent(edit)">
+    <input name="" id="" #save class="btn btn-secondary m-1" type="button" value="Save" (click)="modeChangeEvent(save)">
+    <input name="" id="" [disabled]="mode === 'New' || !authService.can('delete:movies')" #del class="btn btn-danger m-1" type="button" value="Delete"
+      (click)="modeChangeEvent(del)">
+    <input name="" id="" #back class="btn btn-warning m-1" type="button" value="BackToList"
+      (click)="modeChangeEvent(back)">
+  </div>
+  <div class="split-container" *ngIf="movieService.EditingMovie || mode === 'New'">
+    <div class="movie-img-detail">
+      <img src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" />
+    </div>
+    <div class="movie-detail-info" *ngIf="mode === 'Edit' && haveData && !isEditExistingData">
+      <div class="movie-public-info">
+        <div><span class="badge bg-primary">Title:</span> {{newMovieCreateInfo['title']}}</div>
+        <div><span class="badge bg-primary">Release Date:</span>
+          {{(movieDateObject['releaseDate'].isDateValue) ? (movieDateObject['releaseDate'].value | date:'longDate') : movieDateObject['releaseDate'].value}}
+        </div>
+        <div><span class="badge bg-primary">Movie Cast:</span>
+          <span class="badge bg-warning m-1" *ngFor="let item of movieService.EditingMovie['pariticipatedActors']; let i=index">
+            {{item.name}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <form *ngIf="mode === 'New' || isEditExistingData" [formGroup]="movieInfoForm" (ngSubmit)="onSubmit">
+      <div class="movie-public-edit">
+        <mat-form-field class="input-outer" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput type="text" formControlName="movieTitle" placeholder="My Movie Name" value="" class="input">
+        </mat-form-field>
+        <mat-form-field class="input-outer" appearance="fill">
+          <mat-label>Release Date:</mat-label>
+          <input matInput [matDatepicker]="pickerReleaseDate" formControlName="movieReleaseDate">
+          <mat-datepicker-toggle matSuffix [for]="pickerReleaseDate">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerReleaseDate></mat-datepicker>
+        </mat-form-field>
+        <div></div>
+        <mat-form-field class="add-actor" appearance="fill">
+          <mat-label>Hired Actor</mat-label>
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let actor of actorList"
+              (removed)="remove(actor)">
+              {{actor.name}}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+            <input
+              placeholder="New fruit..."
+              #fruitInput
+              [formControl]="actorCtrl"
+              [matAutocomplete]="auto"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let actor of filteredActors | async" [value]="actor">
+              {{actor.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <app-form-error-input *ngIf="movieInfoForm.status !== 'VALID'"></app-form-error-input>
+      </div>
+    </form>
+  </div>
+  <app-no-result [propsBoolean]="!movieService.EditingMovie && mode !== 'New'"></app-no-result>
+</div>

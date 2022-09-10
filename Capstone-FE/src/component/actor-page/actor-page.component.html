@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <form action="" [formGroup]="actorInfoSearchForm" (ngSubmit)="onSubmit()">
+    <div class="row align-content-lg-top bg-custom">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <div class="">
+              <label for="" class="form-label">Actor's Name</label>
+              <input type="text" class="form-control" formControlName="actorName" id="" aria-describedby="helpId" placeholder="Actor's Name">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-around">
+          <div class="">
+            <label for="" class="form-label">Gender</label>
+            <select class="form-control"
+            #gender
+            (blur)="setGender(gender.value)"
+            formArrayName="actorGender"  id="">
+              <option value="" >Select</option>
+              <option *ngFor="let item of genderList; let i=index" [ngValue]="item">{{item}}</option>
+            </select>
+          </div>
+          <div class="">
+            <label for="customRange3" class="form-label">Actor's Age</label>
+            <input type="range" class="form-range" [(ngModel)]="actorAgeDisplay" formControlName="actorAge" min="10" max="100" step="1" id="customRange3">
+            <button type="button" disabled class="btn btn-primary position-relative">
+              {{actorAgeDisplay}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start mt-1">
+      <button mat-flat-button class="btn" type="submit" color="primary">Search</button>
+      <button mat-flat-button class="btn" *ngIf="authService.can('create:actors')" (click)="transitToCreateMode()"  type="button" color="accent">Create</button>
+    </div>
+  </form>
+  <router-outlet></router-outlet>
+</div>

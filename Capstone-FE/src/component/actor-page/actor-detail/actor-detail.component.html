@@ -1,0 +1,28 @@
+<div class="container-fluid ">
+  <div class="split-container-1" >
+    <form class="actor-info" [formGroup]="actorInfoForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="..." formControlName="actorName">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input type="number" min="10" matInput placeholder="10 years old" formControlName="actorAge">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="actorGender">
+          <mat-option *ngFor="let gender of genderList" [value]="gender">
+            {{gender}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button type="button"  type="submit" class="btn btn-primary m-1">{{(mode === 'Edit') ? 'Update' : 'Save'}}</button>
+        <button type="button" [disabled]="!authService.can('delete:actors')" *ngIf="mode === 'Edit'" type="button" (click)="modeChangeEvent('Delete')"  class="btn btn-danger m-1">Delete</button>
+        <button type="button"  type="button" (click)="ReturnToList()"  class="btn btn-secondary m-1">Back To List</button>
+      </div>
+    </form>
+  </div>
+  <app-form-error-input *ngIf="actorInfoForm.status !== 'VALID'"></app-form-error-input>
+</div>

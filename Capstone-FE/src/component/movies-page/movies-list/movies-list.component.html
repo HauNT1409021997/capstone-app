@@ -1,0 +1,30 @@
+<div class="container-fluid bg-light">
+  <div class="inner">
+    <div class="movie-list" *ngFor="let item of paginationList; let i=index">
+      <div class="movie-list-item">
+        <div class="img-section">
+          <li (click)="authService.can('update:movies') && routeNavigate(i)"><img src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" /></li>
+        </div>
+      </div>
+      <div class="movie-item">
+        <div><span class="badge bg-primary">Title :</span> {{item.title}} </div>
+        <div><span class="badge bg-primary">Movie Cast :</span>
+          <span class="badge bg-warning m-1" *ngFor="let actor of item.pariticipatedActors; let i=index">
+            {{actor.name}}
+          </span>
+          {{(item.pariticipatedActors.length === 0) && "N/A" || ""}}
+        </div>
+        <div><span class="badge bg-primary">Release date :</span> {{(item['releaseDate'].isDateValue) ? (item['releaseDate'].value | date:'longDate') : item['releaseDate'].value}}</div>
+      </div>
+    </div>
+    <mat-paginator *ngIf="filmListlength > 0"
+    [showFirstLastButtons]="true"
+    [length]="filmListlength"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOption"
+    (page)="changePage($event)"
+    aria-label="Select page"
+    >
+    </mat-paginator>
+    <app-no-result [propsBoolean]="filmListlength === 0"></app-no-result>
+  </div>

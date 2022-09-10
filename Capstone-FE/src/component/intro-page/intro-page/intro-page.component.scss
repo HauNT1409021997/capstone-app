@@ -1,0 +1,28 @@
+.container-fluid {
+  height: 90vh;
+  overflow-y: auto;
+  .title {
+    margin: 0;
+    padding: .5em;
+    background-color: rgb(96, 134, 215);
+    border: 1px solid rgb(140, 222, 108);
+    font-size: 2em;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFF;
+    transition: all 300ms ease-in-out;
+  }
+
+  #movies-intro {
+    background-color: rgb(207, 111, 42);
+    color: #FFFF;
+    padding: 1em;
+  }
+
+  #acting-intro {
+    background-color: rgb(207, 111, 42);
+    color: #FFFF;
+    padding: 1em;
+  }
+}
+

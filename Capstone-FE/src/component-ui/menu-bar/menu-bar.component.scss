@@ -1,0 +1,18 @@
+
+button {
+  border:  1px solid rgb(147, 130, 130);
+  margin-inline: .5em;
+  margin-block: .5em;
+  height: 100%;
+}
+.title-section {
+  position: relative;
+  .login-Btn {
+    position: absolute;
+    height: min-content;
+    background-color: rgb(9, 60, 189);
+    color: #FFFF;
+    top: calc(100% - 85%);
+    left: calc(100% - 5%);
+  }
+}

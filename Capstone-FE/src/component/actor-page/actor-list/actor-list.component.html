@@ -1,0 +1,14 @@
+<div class="mt-5" *ngIf="actorListLength > 0">
+  <app-list [listColsName] = "infoList"
+  [listData] = "actorInfo"
+  [listColsTitle] = "infoTitle"
+  [rowClickEvent]="authService.can('update:actors') && navigateToDetails"
+  ></app-list>
+</div>
+<div class="mt-5" *ngIf="actorListLength === 0">
+  <div class="card">
+    <div class="card-body">
+      No results found
+    </div>
+  </div>
+</div>
